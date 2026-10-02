@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Оценить дом</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <form id="form" novalidate>
+    <label for="query">Дом</label>
+    <textarea id="query" rows="2" placeholder="Ссылка, номер участка или адрес"></textarea>
+    <div class="source" id="source"></div>
+
+    <div class="money">
+      <div>
+        <label for="price">Цена продавца</label>
+        <input id="price" inputmode="decimal" placeholder="650k">
+      </div>
+      <div>
+        <label for="repair">Ремонт</label>
+        <input id="repair" inputmode="decimal" placeholder="авто">
+      </div>
+    </div>
+    <button id="go" type="submit">Оценить дом</button>
+  </form>
+
+  <main id="out" aria-live="polite"></main>
+
+  <details id="settings">
+    <summary>Параметры сделки</summary>
+    <div class="settings-grid">
+      <label>Оформление и содержание, $<input id="s-fixed" inputmode="decimal"></label>
+      <label>Расходы на продажу, %<input id="s-selling" inputmode="decimal"></label>
+      <label>Целевая прибыль, %<input id="s-profit" inputmode="decimal"></label>
+    </div>
+    <div class="settings-row">
+      <button type="button" id="save-settings">Сохранить</button>
+      <button type="button" id="reset-settings" class="link">Вернуть по умолчанию</button>
+    </div>
+    <p class="data-date" id="data-date"></p>
+  </details>
+
+  <script src="engine.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
